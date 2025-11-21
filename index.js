@@ -9,11 +9,23 @@
 
 function lcm(a, b) {
   // counter for a
+  let counterA = a;
   // counter for b
+  let counterB = b;
   // counterA = a + a;
+  counterA = a + a;
   // counterB = b + b;
+  counterB = b + b;
   // if (counterA = counterB) {
-  // return counterA;}
+  if (counterA === counterB) {
+    // return counterA;}
+    return counterA;
+  }
   // else call the process again
+  else {
+    lcm(counterA, counterB);
+  }
   // do i want to make this into a function inside the lcm function?
 }
+
+// problem being is 12 from counterA and 12 from counterB do not happen on the same iteration....
