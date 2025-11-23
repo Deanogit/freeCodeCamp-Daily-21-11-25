@@ -33,17 +33,23 @@
 
 function lcm(a, b) {
   let counterA = a;
+  console.log(counterA);
   let counterB = b;
+  console.log(counterB);
   ///
   while (!checkIsEqual(counterA, counterB)) {
     if (checkAIsHigher(counterA, counterB)) {
       counterB = counterB + b;
+      console.log(counterB);
+      console.log(counterA);
       checkIsEqual(counterA, counterB);
     } else if (checkBIsHigher(counterA, counterB)) {
       counterA = counterA + a;
       checkIsEqual(counterA, counterB);
+      console.log(counterA, counterB);
     }
   }
+  return counterA;
 }
 
 // counterA = a + a;
