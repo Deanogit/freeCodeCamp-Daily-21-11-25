@@ -32,23 +32,44 @@
 // i think it needs to check if counterA < counterB, then counterA + a or vice-versa
 
 function lcm(a, b) {
-  // counter for a
   let counterA = a;
-  // counter for b
   let counterB = b;
-  // counterA = a + a;
-  counterA = a + a;
-  // counterB = b + b;
-  counterB = b + b;
-  // if (counterA = counterB) {
-  if (counterA === counterB) {
-    // return counterA;}
-    return counterA;
-  }
-  // else if (counterA < counterB)
-  else if (counterA < counterB) {
-    counterA = counterA + a;
+  ///
+  while (!checkIsEqual(counterA, counterB)) {
+    if (checkAIsHigher(counterA, counterB)) {
+      counterB = counterB + b;
+      checkIsEqual(counterA, counterB);
+    } else if (checkBIsHigher(counterA, counterB)) {
+      counterA = counterA + a;
+      checkIsEqual(counterA, counterB);
+    }
   }
 }
 
+// counterA = a + a;
+// counterB = b + b;
+// counterB = b + b;
+// if (counterA = counterB) {
+// if (checkIsEqual()) {
+// return counterA;}
+//   return counterA;
+//}
+// else if (counterA < counterB)
+// else if (counterA < counterB) {
+//   counterA = counterA + a;
+//}
+
 // maybe build a check function, which compares if they are equal, which can be called each time a counter changes...?
+function checkIsEqual(a, b) {
+  return a === b;
+}
+
+// check A is higher
+function checkAIsHigher(a, b) {
+  return a > b;
+}
+
+// check B is higher
+function checkBIsHigher(a, b) {
+  return a < b;
+}
